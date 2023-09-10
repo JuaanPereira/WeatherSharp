@@ -1,7 +1,5 @@
-﻿using System;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace WeatherSharp
 {
@@ -30,10 +28,15 @@ namespace WeatherSharp
             return isConnected;
         }
 
-        public async Task getCoords(string city)
+        public async Task<string> getCoords(string city)
         {
+
+            client = new HttpClient();
+            response = await client.GetAsync(GEO_URL+"?name="+city);
             
-            MessageBox.Show(city);
+            string JSON = await response.Content.ReadAsStringAsync();
+
+            return JSON;
 
         }
     }

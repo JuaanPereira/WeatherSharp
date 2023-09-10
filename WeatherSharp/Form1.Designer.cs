@@ -34,6 +34,9 @@ namespace WeatherSharp
             this.button1 = new System.Windows.Forms.Button();
             this.inputCity = new System.Windows.Forms.TextBox();
             this.btnSearchCity = new System.Windows.Forms.Button();
+            this.responseBox = new System.Windows.Forms.RichTextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnTestAPI
@@ -66,14 +69,14 @@ namespace WeatherSharp
             // 
             // inputCity
             // 
-            this.inputCity.Location = new System.Drawing.Point(40, 35);
+            this.inputCity.Location = new System.Drawing.Point(12, 12);
             this.inputCity.Name = "inputCity";
             this.inputCity.Size = new System.Drawing.Size(364, 23);
             this.inputCity.TabIndex = 3;
             // 
             // btnSearchCity
             // 
-            this.btnSearchCity.Location = new System.Drawing.Point(410, 32);
+            this.btnSearchCity.Location = new System.Drawing.Point(382, 9);
             this.btnSearchCity.Name = "btnSearchCity";
             this.btnSearchCity.Size = new System.Drawing.Size(75, 27);
             this.btnSearchCity.TabIndex = 4;
@@ -81,11 +84,30 @@ namespace WeatherSharp
             this.btnSearchCity.UseVisualStyleBackColor = true;
             this.btnSearchCity.Click += new System.EventHandler(this.btnSearchCity_Click);
             // 
+            // responseBox
+            // 
+            this.responseBox.Location = new System.Drawing.Point(463, 12);
+            this.responseBox.Name = "responseBox";
+            this.responseBox.Size = new System.Drawing.Size(385, 405);
+            this.responseBox.TabIndex = 5;
+            this.responseBox.Text = "";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 101);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(431, 239);
+            this.dataGridView1.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 429);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.responseBox);
             this.Controls.Add(this.btnSearchCity);
             this.Controls.Add(this.inputCity);
             this.Controls.Add(this.button1);
@@ -93,7 +115,7 @@ namespace WeatherSharp
             this.Controls.Add(this.btnTestAPI);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,6 +128,8 @@ namespace WeatherSharp
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox inputCity;
         private System.Windows.Forms.Button btnSearchCity;
+        private System.Windows.Forms.RichTextBox responseBox;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 
