@@ -1,5 +1,4 @@
-﻿
-namespace WeatherSharp
+﻿namespace WeatherSharp
 {
     partial class Form1
     {
@@ -35,8 +34,9 @@ namespace WeatherSharp
             this.inputCity = new System.Windows.Forms.TextBox();
             this.btnSearchCity = new System.Windows.Forms.Button();
             this.responseBox = new System.Windows.Forms.RichTextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.citiesDataGrid = new System.Windows.Forms.DataGridView();
+            this.cbViewAPIRes = new System.Windows.Forms.CheckBox();
+            ((System.ComponentModel.ISupportInitialize)(this.citiesDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // btnTestAPI
@@ -86,27 +86,39 @@ namespace WeatherSharp
             // 
             // responseBox
             // 
-            this.responseBox.Location = new System.Drawing.Point(463, 12);
+            this.responseBox.Location = new System.Drawing.Point(463, 9);
             this.responseBox.Name = "responseBox";
             this.responseBox.Size = new System.Drawing.Size(385, 405);
             this.responseBox.TabIndex = 5;
             this.responseBox.Text = "";
             // 
-            // dataGridView1
+            // citiesDataGrid
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 101);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(431, 239);
-            this.dataGridView1.TabIndex = 6;
+            this.citiesDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.citiesDataGrid.Location = new System.Drawing.Point(12, 42);
+            this.citiesDataGrid.Name = "citiesDataGrid";
+            this.citiesDataGrid.RowTemplate.Height = 25;
+            this.citiesDataGrid.Size = new System.Drawing.Size(445, 329);
+            this.citiesDataGrid.TabIndex = 6;
+            // 
+            // cbViewAPIRes
+            // 
+            this.cbViewAPIRes.AutoSize = true;
+            this.cbViewAPIRes.Location = new System.Drawing.Point(168, 390);
+            this.cbViewAPIRes.Name = "cbViewAPIRes";
+            this.cbViewAPIRes.Size = new System.Drawing.Size(122, 19);
+            this.cbViewAPIRes.TabIndex = 7;
+            this.cbViewAPIRes.Text = "View API response";
+            this.cbViewAPIRes.UseVisualStyleBackColor = true;
+            this.cbViewAPIRes.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(860, 429);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1276, 493);
+            this.Controls.Add(this.cbViewAPIRes);
+            this.Controls.Add(this.citiesDataGrid);
             this.Controls.Add(this.responseBox);
             this.Controls.Add(this.btnSearchCity);
             this.Controls.Add(this.inputCity);
@@ -115,7 +127,7 @@ namespace WeatherSharp
             this.Controls.Add(this.btnTestAPI);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.citiesDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,7 +141,8 @@ namespace WeatherSharp
         private System.Windows.Forms.TextBox inputCity;
         private System.Windows.Forms.Button btnSearchCity;
         private System.Windows.Forms.RichTextBox responseBox;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView citiesDataGrid;
+        private System.Windows.Forms.CheckBox cbViewAPIRes;
     }
 }
 

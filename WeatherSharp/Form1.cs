@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Windows.Forms;
-using Newtonsoft.Json.Linq;
 
 namespace WeatherSharp
 {
     public partial class Form1 : Form
     {
         API api;
-
         public Form1()
         {
             InitializeComponent();
+            responseBox.Hide();
         }
 
         private async void btnTestApi_clicked(object sender, EventArgs e)
@@ -30,31 +29,28 @@ namespace WeatherSharp
         private async void btnSearchCity_Click(object sender, EventArgs e)
         {
             api = new API();
-            string input = inputCity.Text;
-            
+            string input = inputCity.Text;          
             string result = await api.getCoords(input);
-
-            responseBox.Text = result;
+            responseBox.Text = result;  
             
-            /*------- CODE SECTION TO PARSE THE JSON --------*/
+            Utils addRegisters = new Utils();
+            Cities city = new Cities();
 
-            // Parse the JSON data
-            JObject json = JObject.Parse(result);
+            addRegisters.addRegisters(city, result);
 
-            // Access the "results" array and its first element
-            JToken parsedJSON = json["results"][0];
+            citiesDataGrid.DataSource = city.cities;
+        }
 
-            // Retrieve values for the specified keys
-            string name = (string)parsedJSON["name"];
-            double latitude = (double)parsedJSON["latitude"];
-            double longitude = (double)parsedJSON["longitude"];
-
-            /* Creamos nuevo objeto para añadir la ciudad buscada... */
-            Cities CityData = new Cities();
-            CityData.addCity(name, latitude, longitude, 0);
-
-            // Bind the data to the DataGridView
-            dataGridView1.DataSource = CityData.cities;
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbViewAPIRes.CheckState == CheckState.Checked)
+            {
+                responseBox.Show();
+            }
+            else
+            {
+                responseBox.Hide();
+            }
         }
     }
 }

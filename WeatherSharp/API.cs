@@ -7,6 +7,9 @@ namespace WeatherSharp
     {
         string URL = "https://api.open-meteo.com/v1/forecast"; /* Weather */
         string GEO_URL = "https://geocoding-api.open-meteo.com/v1/search"; /* Geolocations */
+        /* GOOGLE API SOON */
+
+
 
         HttpClient client;
         HttpResponseMessage response;
