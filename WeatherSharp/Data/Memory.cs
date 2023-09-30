@@ -2,7 +2,7 @@
 
 namespace WeatherSharp
 {
-    class Cities /* Data management, MGMT is also a really cool band */
+    class Memory /* Data management, MGMT is also a really cool band */
     {
         public List<CityData> cities = new List<CityData>();
 
@@ -11,10 +11,9 @@ namespace WeatherSharp
             public string City { get; set; }
             public double Latitude { get; set; }
             public double Longitude { get; set; }
-            /*public int Population { get; set; }*/
             public string Country { get; set; }
         }
-
+        
         public void addCity(string city, double latitude, double longitude, int population, string country)
         {
             cities.Add(new CityData
@@ -22,7 +21,6 @@ namespace WeatherSharp
                 City = city,
                 Latitude = latitude,
                 Longitude = longitude,
-               /* Population = population,*/
                 Country = country
             });
         }

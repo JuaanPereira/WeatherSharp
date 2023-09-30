@@ -1,11 +1,14 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
+using System.Windows.Forms;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace WeatherSharp
 {
     class Utils
     {
-        public void addRegisters(Cities cities, string JSON){ /* Loops JSON elements and adds them to it's memory table */
+        public void addRegisters(Memory cities, string JSON){ /* Loops JSON elements and adds them to it's memory table */
             
             string city;
             float latitude;
@@ -48,6 +51,19 @@ namespace WeatherSharp
 
             return countryName;
         }
-    
+
+        bool IsValidJson(string json)
+        {
+            try
+            {
+                JToken.Parse(json);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
     }
 }

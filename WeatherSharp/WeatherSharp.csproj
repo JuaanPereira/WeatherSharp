@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="CefSharp.Common" Version="116.0.230" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1938.49" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
